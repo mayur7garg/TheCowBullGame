@@ -37,10 +37,11 @@ __Lose Screen__
 #### Key Features-
 1. Interactive Interface
 2. The word you hover your mouse on gets underlined to prevent misclicks.
-3. The program make sure that you cannot enter a certain alphabet twice in the same input.
+3. The program make sure that you cannot enter a certain alphabet twice in the same input or a certain word again.
 4. Your previous inputs are displayed with their results.
 5. Erase button to update your input before submitting.
 6. Scores to compare your performance
+7. Timer to compare how quickly you guessed the correct answer.
 
 ##### Requires _Pygame Module_ to run
 
