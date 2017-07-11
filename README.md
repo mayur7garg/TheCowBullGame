@@ -16,23 +16,23 @@ __Welcome Screen__
 
 __Game Screen 1__
 
-![Game Screen 1](https://user-images.githubusercontent.com/26298346/27971904-0903b3a4-6372-11e7-872f-9a384fa5abaf.PNG)
+![Game Screen 1](https://user-images.githubusercontent.com/26298346/28050128-5b633abc-6619-11e7-9b20-9ebe825cd51a.PNG)
 
 __Game Screen 2__
 
-![Game Screen 2](https://user-images.githubusercontent.com/26298346/27971905-09073dee-6372-11e7-95c7-23af76379a20.PNG)
+![Game Screen 2](https://user-images.githubusercontent.com/26298346/28050129-5b700e0e-6619-11e7-8289-7c5a1940d8f9.PNG)
 
 __Game Screen 3__
 
-![Game Screen 3](https://user-images.githubusercontent.com/26298346/27971903-08fe275e-6372-11e7-9738-9670b24d20f1.PNG)
+![Game Screen 3](https://user-images.githubusercontent.com/26298346/28050131-5b72e73c-6619-11e7-93cd-dbe90d2e2a2d.PNG)
 
 __Win Screen__
 
-![Win Screen](https://user-images.githubusercontent.com/26298346/27971907-09140ccc-6372-11e7-898e-1ce3e44ae353.PNG)
+![Win Screen](https://user-images.githubusercontent.com/26298346/28050130-5b72d36e-6619-11e7-803e-48ceebe43596.PNG)
 
 __Lose Screen__
 
-![Lose Screen](https://user-images.githubusercontent.com/26298346/27971901-08fb95de-6372-11e7-8798-7ff790545847.PNG)
+![Lose Screen](https://user-images.githubusercontent.com/26298346/28050132-5b74b9b8-6619-11e7-9ccf-b21145dde6bb.PNG)
 
 #### Key Features-
 1. Interactive Interface
