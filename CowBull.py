@@ -12,6 +12,7 @@ white = (255, 255, 255)
 black = (0, 0, 0)
 font1 = "Times New Roman"
 font2 = "Arial"
+toggleKey = ["  *" for i in range(0, 26)]
 
 #Function To Show Text As Per The Required Parameters
 def text(string, size, color, top, left, fonttype = None, bold = False, italic = False):
@@ -26,7 +27,7 @@ def text(string, size, color, top, left, fonttype = None, bold = False, italic =
 #Function To Set A Word From The Database
 def set_word():
     file = open("Wordlist.txt", "r")
-    ran = random.randrange(124)
+    ran = random.randrange(127)
     s = ""
     for i in range(ran):
         s = file.readline()
@@ -61,26 +62,42 @@ def displayTime(ret = False):
     timer = float(timeCurrent-timeStart)
     timer = round(timer, 1)
     pygame.draw.rect(Canvas, white, (975 , 15, 120, 30))
-    text("Time : " + str(timer), 23, black, 15, 975, font1, False, True)
+    text("Time : " + str(timer), 23, black, 10, 975, font1, False, True)
     if ret:
         return timer
     
 #Function To Display/Refresh The Game Screen
 def dispGame(turn, words):
 
-    Canvas.fill(white)
-    alph()
-    text("Your word has been chosen.", 25, black, 110, 30, font2, False, True)
-    text("Choose from the above alphabets to guess the word.", 25, black, 140, 30, font2, False, True)
+    Canvas.fill(white)  #Refresh The Game Scren
+    alph()  #Display The Alphabets
+    for i in range(26): #Display Toggle Keys
+        text(toggleKey[i], 20, black, 95, 30 + i*40, font1)
+    
+    text("Your word has been chosen.", 25, black, 140, 30, font2, False, True)
+    text("Choose from the above alphabets to guess the word.", 25, black, 170, 30, font2, False, True)
+    
     a = "Turn : " + str(turn)
-    text(a, 23, black, 15, 30, font1, False, True)
+    text(a, 23, black, 10, 30, font1, False, True)  #Display Turn Count
+    pygame.draw.line(Canvas, black, (20, 118), (1080, 118), 1)
     for i in range(4):
-        text("_", 140, black, 330, i*100+100)
-    for i in range(len(words)):
-        text(str(i+1) + ". " + words[i][0], 22, black, 107+i*55, 930, font1)
+        text("_", 140, black, 330, i*100+100)   #Display Input Blanks
+    for i in range(len(words)): #Display Previous Inputs
+        text(str(i+1) + ". " + words[i][0], 22, black, 122+i*55, 930, font1)
         b = "B: " + str(words[i][1]) + " / C: " + str(words[i][2])
-        text(b, 19, black, 130+i*55, 950, font1)
-
+        text(b, 19, black, 145+i*55, 950, font1)
+    
+#Function To Update The Toggle Key
+def helpKeys(index):
+    if toggleKey[index] == "  *":
+        toggleKey[index] = "  ?"
+    elif toggleKey[index] == "  ?":
+        toggleKey[index] = "  X"
+    elif toggleKey[index] == "  X":
+        toggleKey[index] = "  *"
+    pygame.draw.rect(Canvas, white, (30 + index*40, 95, 40, 20))
+    text(toggleKey[index], 20, black, 95, 30 + index*40, font1)
+        
 #Function To Display/Refresh User Input
 def updateguess(guess = ""):
     
@@ -91,7 +108,7 @@ def updateguess(guess = ""):
     for i in range(len(guess)):
         text(guess[i], 120, black, 320, i*100+100)
     pygame.display.update()
-
+    
 #Main Game Loop
 def startGame():
     turn = 1
@@ -99,6 +116,7 @@ def startGame():
     word = set_word()
     while len(word)!=4:
         word=set_word()
+    
     dispGame(turn, words)
     pygame.display.update()
 
@@ -128,12 +146,18 @@ def startGame():
 
                 #Underline The Alphabet That The Mouse Cursor Is Hovering On
                 if event.type == MOUSEMOTION:
-                    if event.pos[0]>30 and event.pos[0]<1070 and event.pos[1]>50 and event.pos[1]<100:
+                    if event.pos[0]>30 and event.pos[0]<1070 and event.pos[1]>50 and event.pos[1]<120:
                         x = int((event.pos[0] - 30)/40)
                         pygame.draw.line(Canvas, white, (1, 90), (1099, 90), 2)
                         pygame.draw.line(Canvas, black, (x*40+25, 90), (x*40 + 60, 90), 2)
                         pygame.display.update()
-
+                        
+                #Detect Click On Toggle Keys
+                if event.type == MOUSEBUTTONDOWN:
+                    if event.pos[0]>30 and event.pos[0]<1070 and event.pos[1]>95 and event.pos[1]<120:
+                        x = int((event.pos[0] - 30)/40)
+                        helpKeys(x)
+                        
                 #Detect Click On Erase Button
                 if event.type == MOUSEBUTTONDOWN:
                     if letter>1 and event.pos[0]>950 and event.pos[0]<1070 and event.pos[1]>620 and event.pos[1]<670:
@@ -142,7 +166,7 @@ def startGame():
                         updateguess(guess)
                         
                     #Detect Click On A Certain Alphabet
-                    if event.pos[0]>30 and event.pos[0]<1070 and event.pos[1]>50 and event.pos[1]<100:
+                    if event.pos[0]>30 and event.pos[0]<1070 and event.pos[1]>50 and event.pos[1]<95:
                         x = int((event.pos[0] - 30)/40)
                         string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                         if letter == 1:
@@ -224,5 +248,6 @@ global timeStart
 timeStart = time.time()
 start = startGame()
 while start:
+    toggleKey = ["  *" for i in range(0, 26)]
     timeStart = time.time()
     start = startGame()
