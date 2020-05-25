@@ -1,4 +1,4 @@
-# TheCowBullGame
+# The Cow Bull Game
 *__A word guessing interactive Python based game written using the pygame module.__*
 
 ### How It Works-
