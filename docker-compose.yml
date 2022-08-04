@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  webapp:
+    build: ./
+    image: cow-bull-game-webapp-img:latest
+    ports:
+      - "8000:80"
+    container_name: cow-bull-game-webapp
