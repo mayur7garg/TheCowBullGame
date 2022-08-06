@@ -22,7 +22,7 @@
             <p><strong>Attempts: </strong>{{tries}} / 10</p>
         </div>
         <form method="post" id="input_word" action="/" enctype="multipart/form-data">
-            <div class="form-group row col-md-4" id="main-game-form">
+            <div class="form-group row col-md-6" id="main-game-form">
                 <label for="new_guess" class="col-md-3 col-form-label">
                     <strong>Make a guess: </strong>
                 </label>
@@ -74,7 +74,7 @@
         {% endif %}
     </div>
     {% if tries > 0 %}
-    <div class="col-md-12 align-center" id="attempts-table-container">
+    <div class="col-md-8 align-center" id="attempts-table-container">
         <table class="table table-striped table-bordered table-hover caption-top">
             <caption>Past attempts</caption>
             <thead>
