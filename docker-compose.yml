@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  webapp:
+    build: 
+      dockerfile: Dockerfile
+      args:
+        port: 80
+    image: cow-bull-game-webapp-img:latest
+    ports:
+      - "8000:80"
+    container_name: cow-bull-game-webapp
