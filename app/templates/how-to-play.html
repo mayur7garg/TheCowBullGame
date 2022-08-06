@@ -13,11 +13,11 @@
 </head>
 
 <body>
-    <div class="col-md-6 align-center" id="header-text">
+    <div class="col-lg-6 align-center" id="header-text">
         <h1>How to play</h1>
         <h5>The Cow Bull Game</h5>
     </div>
-    <div class="col-md-6" id="instructions">
+    <div class="col-lg-6" id="instructions">
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
@@ -133,10 +133,35 @@
                 <h2 class="accordion-header" id="headingSix">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                        Anything else I need to care about?
+                        What if I get 0&nbsp;<i class="fa fa-bullseye fa-border" aria-hidden="true"></i>&nbsp;BULLS
+                        and 0&nbsp;<i class="fa fa-bell fa-border" aria-hidden="true"></i>&nbsp;COWS?
                     </button>
                 </h2>
                 <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>
+                            It means that neither of the 4 letters in the word you guessed are in the correct word.
+                        </p>
+                        <p><strong>For example:</strong></p>
+                        <p>
+                            If the word you guessed was <strong>WORD</strong>, and you got
+                            0 <i class="fa fa-bullseye fa-border" aria-hidden="true"></i> <strong>BULLS</strong>
+                            and 0 <i class="fa fa-bell fa-border" aria-hidden="true"></i> <strong>COWS</strong>,
+                            it means none of the letters <strong>W, O, R</strong> or <strong>D</strong>
+                            are in the correct word.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSeven">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        Anything else I need to care about?
+                    </button>
+                </h2>
+                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <ul>
@@ -147,12 +172,14 @@
                             <li>The idea of this game is neither proprietary nor original.</li>
                             <li>
                                 The game <strong>uses cookies</strong> to store the game state.
-                                No data is saved on the server.
+                                <strong>No data is saved on any server.</strong>
                             </li>
                             <li>
                                 The source code of this game is available at
-                                <a href="https://github.com/mayur7garg/TheCowBullGame">
-                                    GitHub - mayur7garg/TheCowBullGame</a>.
+                                <strong>
+                                    <a href="https://github.com/mayur7garg/TheCowBullGame">
+                                        GitHub - mayur7garg/TheCowBullGame</a>
+                                </strong>.
                                 If you like this game, make sure to give this repository a
                                 <i class="fa fa-star" aria-hidden="true" style="color:#ffc107"></i>.
                             </li>
@@ -168,7 +195,7 @@
     </div>
 
     <div class="hyperlink-btn-container align-center">
-        <button type="button" class="btn btn-success">
+        <button type="button" class="btn btn-success col-lg-2 col-sm-3 custom-big-btn">
             <a href="/"><i class="fa fa-bullseye" aria-hidden="true"></i>&nbsp;Let's play!</a>
         </button>
     </div>

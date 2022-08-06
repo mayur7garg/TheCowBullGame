@@ -1,5 +1,12 @@
 body {
-    padding: 10px;
+    padding: 40px 12px 0px;
+    font-size: 18px;
+}
+
+button.custom-big-btn{
+    padding: 12px 0px;
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .align-center {
@@ -31,7 +38,6 @@ body {
 }
 
 #submit-btn {
-    width: 20%;
     margin: auto;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -55,5 +61,5 @@ body {
 
 #instructions .accordion-button{
     font-weight: 700;
-    font-size: 18px;
+    font-size: 20px;
 }

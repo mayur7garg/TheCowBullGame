@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="col-md-6 align-center" id="header-text">
+    <div class="col-lg-6 align-center" id="header-text">
         <h1>The Cow Bull Game</h1>
         <h5>A word guessing game</h5>
     </div>
@@ -22,16 +22,16 @@
             <p><strong>Attempts: </strong>{{tries}} / 10</p>
         </div>
         <form method="post" id="input_word" action="/" enctype="multipart/form-data">
-            <div class="form-group row col-md-6" id="main-game-form">
-                <label for="new_guess" class="col-md-3 col-form-label">
+            <div class="form-group row col-lg-6" id="main-game-form">
+                <label for="new_guess" class="col-lg-3 col-form-label">
                     <strong>Make a guess: </strong>
                 </label>
-                <div class="col-md-9">
+                <div class="col-lg-9">
                     <input type="text" name="new_guess" id="new_guess" class="form-control" required maxlength="4"
                         onkeydown="return /[a-z]/i.test(event.key)" placeholder="Enter a 4 letter word here..." />
                 </div>
-                <div class="form-group row" id="submit-btn">
-                    <input type="submit" class="btn btn-success">
+                <div class="form-group row col-lg-3 col-sm-4" id="submit-btn">
+                    <button type="submit" class="btn btn-success custom-big-btn">Submit</button>
                 </div>
             </div>
         </form>
@@ -60,29 +60,29 @@
 
         {% if tries == 0 %}
         <div class="hyperlink-btn-container align-center">
-            <button type="button" class="btn btn-primary">
+            <button type="button" class="btn btn-primary col-lg-2 col-sm-3 custom-big-btn">
                 <a href="/how-to-play"><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp;How to play</a>
             </button>
         </div>
         {% endif %}
         {% if tries > 0 %}
         <div class="hyperlink-btn-container align-center">
-            <button type="button" class="btn btn-danger">
+            <button type="button" class="btn btn-danger col-lg-2 col-sm-3 custom-big-btn">
                 <a href="/reset"><i class="fa fa-history" aria-hidden="true"></i>&nbsp;Reset Game</a>
             </button>
         </div>
         {% endif %}
     </div>
     {% if tries > 0 %}
-    <div class="col-md-8 align-center" id="attempts-table-container">
+    <div class="col-lg-8 align-center" id="attempts-table-container">
         <table class="table table-striped table-bordered table-hover caption-top">
             <caption>Past attempts</caption>
             <thead>
                 <tr>
-                    <th scope="col" class="col-md-2">Attempt #</th>
-                    <th scope="col" class="col-md-4">Guess</th>
-                    <th scope="col" class="col-md-3"><i class="fa fa-bullseye fa-border" aria-hidden="true"></i>&nbsp;Bulls</th>
-                    <th scope="col" class="col-md-3"><i class="fa fa-bell fa-border" aria-hidden="true"></i>Cows</th>
+                    <th scope="col" class="col-lg-2 col-sm-2">Attempt #</th>
+                    <th scope="col" class="col-lg-4 col-sm-4">Guess</th>
+                    <th scope="col" class="col-lg-3 col-sm-3"><i class="fa fa-bullseye fa-border" aria-hidden="true"></i>&nbsp;Bulls</th>
+                    <th scope="col" class="col-lg-3 col-sm-3"><i class="fa fa-bell fa-border" aria-hidden="true"></i>Cows</th>
                 </tr>
             </thead>
             <tbody>
