@@ -19,7 +19,7 @@
     </div>
     <div id="main-game-area">
         <div class="align-center">
-            <p><strong>Attempts: </strong>{{tries}} / 10</p>
+            <p><strong>Current attempt: </strong>{{tries + 1}} / 10</p>
         </div>
         <form method="post" id="input_word" action="/" enctype="multipart/form-data">
             <div class="form-group row col-lg-6" id="main-game-form">
@@ -81,8 +81,10 @@
                 <tr>
                     <th scope="col" class="col-lg-2 col-sm-2">Attempt #</th>
                     <th scope="col" class="col-lg-4 col-sm-4">Guess</th>
-                    <th scope="col" class="col-lg-3 col-sm-3"><i class="fa fa-bullseye fa-border" aria-hidden="true"></i>&nbsp;Bulls</th>
-                    <th scope="col" class="col-lg-3 col-sm-3"><i class="fa fa-bell fa-border" aria-hidden="true"></i>Cows</th>
+                    <th scope="col" class="col-lg-3 col-sm-3"><i class="fa fa-bullseye fa-border"
+                            aria-hidden="true"></i>&nbsp;Bulls</th>
+                    <th scope="col" class="col-lg-3 col-sm-3"><i class="fa fa-bell fa-border"
+                            aria-hidden="true"></i>Cows</th>
                 </tr>
             </thead>
             <tbody>

@@ -36,9 +36,6 @@ async def index(request: Request,
     if (TCBG_WordID is None) or (TCBG_History is None):
         response.set_cookie(key = consts.TCBG_WordKey, value = random.randrange(len(word_list)))
         response.set_cookie(key = consts.TCBG_HistoryKey, value = create_history(tries, guesses, results))
-
-    print(TCBG_WordID)
-    print(TCBG_History)
     
     return response
 
@@ -57,11 +54,6 @@ async def process_guess(request: Request, new_guess: str = Form(),
     word_to_guess = word_list[TCBG_WordID]
     response_data_dict = {"request": request}
 
-    print(TCBG_WordID, word_to_guess)
-    print(TCBG_History)
-    print(new_guess)
-    print(parse_history(TCBG_History))
-
     if len(new_guess) != 4:
         response_data_dict["error_msg"] = "Your guess must be a 4 letter word!"
     elif len(set(new_guess)) != 4:
@@ -72,7 +64,6 @@ async def process_guess(request: Request, new_guess: str = Form(),
         tries += 1
         guesses.append(new_guess)
         results.append(get_guess_results(word_to_guess, new_guess))
-        print(create_history(tries, guesses, results))
 
     reset_game = False
 
