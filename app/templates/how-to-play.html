@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport">
+    <title>How to Play - The Cow Bull Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="{{ url_for('static', path='/css/styles.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', path='/icons/bull.ico') }}">
+</head>
+
+<body>
+    <div class="col-md-6 align-center" id="header-text">
+        <h1>How to play</h1>
+        <h5>The Cow Bull Game</h5>
+    </div>
+    <div class="col-md-4" id="instructions">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What do I need to do?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>Your goal is guess a English word using a maximum of <strong>10</strong> attempts.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        What do I have to guess?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>The word you need to guess to win:</p>
+                        <ul>
+                            <li>is a meaningful dictionary <strong>English word</strong>.</li>
+                            <li>is <strong>4 characters</strong> in length.</li>
+                            <li>has <strong>no repeated</strong> characters.</li>
+                        </ul>
+                        <p>All your guesses are case insensitive.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        How will I know what to guess?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>
+                            For every guess you make, you would be given the number of
+                            <i class="fa fa-bullseye fa-border" aria-hidden="true"></i><strong> BULLS</strong> and
+                            <i class="fa fa-bell fa-border" aria-hidden="true"></i><strong> COWS</strong> you hit.
+                            You can use that info to further narrow down your search and make better gueses.
+                        </p>
+                        <p>
+                            Your guesses needn't be meaningful English words but must be
+                            <strong>4 characters long with no repeating characters</strong>.
+                        </p>
+                        <p>Your first attempt would always be a shot in the dark!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        What are&nbsp;<i class="fa fa-bullseye fa-border" aria-hidden="true"></i>&nbsp;BULLS?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>
+                            If a letter in your guess <strong>is present in the word</strong> that you need to guess and
+                            is also in the <strong>same position</strong>, then you would hit a
+                            <i class="fa fa-bullseye fa-border" aria-hidden="true"></i><strong> BULL</strong>.
+                        </p>
+                        <p><strong>For example:</strong></p>
+                        <p>
+                            If the word you needed to guess was <strong>COWS</strong>, and your guess was
+                            <strong>WORD</strong>, you will hit <strong>1</strong>
+                            <i class="fa fa-bullseye fa-border" aria-hidden="true"></i><strong> BULL</strong>
+                            as the letter <strong>O</strong> is present in both <strong>COWS</strong> and
+                            <strong>WORD</strong> and is at the same position i.e. is the 2nd character in both.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        What are&nbsp;<i class="fa fa-bell fa-border" aria-hidden="true"></i>&nbsp;COWS?
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>
+                            If a letter in your guess <strong>is present in the word</strong> that you need to guess and
+                            is but is in a <strong>different position</strong> in both, then you would hit a
+                            <i class="fa fa-bell fa-border" aria-hidden="true"></i><strong> COW</strong>.
+                        </p>
+                        <p><strong>For example:</strong></p>
+                        <p>
+                            If the word you needed to guess was <strong>COWS</strong>, and your guess was
+                            <strong>WORD</strong>, you will hit <strong>1</strong>
+                            <i class="fa fa-bell fa-border" aria-hidden="true"></i><strong> COW</strong>
+                            as the letter <strong>W</strong> is present in both <strong>COWS</strong> and
+                            <strong>WORD</strong> but is in a different position in both (3rd and 1st respectively).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        Anything else I need to care about?
+                    </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>
+                                This game is built using <strong>Python's FastAPI</strong> framework
+                                and deployed using <strong>Docker containers on Heroku.</strong>
+                            </li>
+                            <li>The idea of this game is neither proprietary nor original.</li>
+                            <li>
+                                The game <strong>uses cookies</strong> to store the game state.
+                                No data is saved on the server.
+                            </li>
+                            <li>
+                                The source code of this game is available at
+                                <a href="https://github.com/mayur7garg/TheCowBullGame">
+                                    GitHub - mayur7garg/TheCowBullGame</a>.
+                                If you like this game, make sure to give this repository a
+                                <i class="fa fa-star" aria-hidden="true" style="color:#ffc107"></i>.
+                            </li>
+                        </ul>
+                        <p>
+                            Made with <i class="fa fa-heart" aria-hidden="true" style="color:red"></i> <strong>from
+                                India!</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hyperlink-btn-container align-center">
+        <button type="button" class="btn btn-success">
+            <a href="/"><i class="fa fa-bullseye" aria-hidden="true"></i>&nbsp;Let's play!</a>
+        </button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

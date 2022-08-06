@@ -1,0 +1,60 @@
+body {
+    padding: 10px;
+}
+
+.align-center {
+    text-align: center;
+    margin: auto;
+}
+
+#attempts-table-container table {
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+}
+
+.hyperlink-btn-container {
+    margin-top: 15px;
+}
+
+.hyperlink-btn-container button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#main-game-area {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#main-game-form {
+    margin: auto;
+}
+
+#submit-btn {
+    width: 20%;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#correct-word-msg span {
+    font-weight: 700;
+    font-size: 1.2em;
+    padding: 0px 10px;
+}
+
+#game-over-msg {
+    margin-top: 10px;
+}
+
+#instructions {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#instructions .accordion-button{
+    font-weight: 700;
+    font-size: 18px;
+}

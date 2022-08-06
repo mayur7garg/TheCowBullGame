@@ -63,11 +63,11 @@ async def process_guess(request: Request, new_guess: str = Form(),
     print(parse_history(TCBG_History))
 
     if len(new_guess) != 4:
-        response_data_dict["error_msg"] = "The guess must be a 4 letter word!"
+        response_data_dict["error_msg"] = "Your guess must be a 4 letter word!"
     elif len(set(new_guess)) != 4:
-        response_data_dict["error_msg"] = "All characters in the guessed word must be unique!"
+        response_data_dict["error_msg"] = "All characters in your guessed word must be unique!"
     elif new_guess in guesses:
-        response_data_dict["error_msg"] = "This word has already been guessed before!"
+        response_data_dict["error_msg"] = "You have already guessed this word before!"
     elif tries < 10:
         tries += 1
         guesses.append(new_guess)
@@ -80,7 +80,7 @@ async def process_guess(request: Request, new_guess: str = Form(),
         response_data_dict["game_over_msg"] = f"You guessed it in {tries} attempts!"
         reset_game = True
     elif tries >= 10:
-        response_data_dict["game_over_msg"] = "All tries exhausted."
+        response_data_dict["game_over_msg"] = "You lost as you exhausted all your attempts!"
         reset_game = True
 
     if reset_game:
@@ -104,4 +104,10 @@ async def reset_sessionID():
     response = RedirectResponse("/")
     response.delete_cookie(key = consts.TCBG_WordKey)
     response.delete_cookie(key = consts.TCBG_HistoryKey)
+    return response
+
+@app.get("/how-to-play")
+async def reset_sessionID(request: Request):
+    response_data_dict = {"request": request}
+    response = templates.TemplateResponse("how-to-play.html", response_data_dict)
     return response
