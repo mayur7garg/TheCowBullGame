@@ -50,7 +50,7 @@ async def process_guess(request: Request, new_guess: str = Form(),
     except Exception as exc:
         tries, guesses, results = 0, [], []
 
-    new_guess = new_guess.upper()
+    new_guess = new_guess.strip().upper()
     word_to_guess = word_list[TCBG_WordID]
     response_data_dict = {"request": request}
 
