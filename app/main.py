@@ -8,9 +8,9 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 from .app_consts import Constants as consts
-from .app_consts import get_word_list
+from .app_consts import get_word_list, ALL_POSSIBLE_COMBS
 
-from .app_utility import parse_history, create_history, get_guess_results
+from .app_utility import parse_history, create_history, get_guess_results, print_possible_word_count
 
 BASE_PATH = Path(__file__).parent.resolve()
 
@@ -36,7 +36,9 @@ async def index(request: Request,
     if (TCBG_WordID is None) or (TCBG_History is None):
         response.set_cookie(key = consts.TCBG_WordKey, value = random.randrange(len(word_list)))
         response.set_cookie(key = consts.TCBG_HistoryKey, value = create_history(tries, guesses, results))
-    
+
+    print_possible_word_count(ALL_POSSIBLE_COMBS, guesses, results, tries)
+
     return response
 
 @app.post("/", response_class = Union[HTMLResponse, RedirectResponse])
@@ -77,6 +79,8 @@ async def process_guess(request: Request, new_guess: str = Form(),
     if reset_game:
         tries, guesses, results = 0, [], []
         response_data_dict["correct_word"] = word_to_guess
+    
+    print_possible_word_count(ALL_POSSIBLE_COMBS, guesses, results, tries)
 
     response_data_dict["tries"] = tries
     response_data_dict["guesses"] = guesses

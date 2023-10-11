@@ -56,3 +56,20 @@ def get_guess_results(word: str, guess: str):
                 results[1] += 1
     
     return results
+
+def print_possible_word_count(all_combs: list[str], guesses: list[str], results: list[list[int]], tries: int):
+    possible_combs = all_combs.copy()
+
+    for guess, result in zip(guesses, results):
+        filtered_combs = []
+
+        for comb in possible_combs:
+            if get_guess_results(comb, guess) == result:
+                filtered_combs.append(comb)
+        
+        possible_combs = filtered_combs
+
+    print(f"{len(possible_combs)} words possible after {tries} tries.")
+
+    if len(possible_combs) < 100:
+        print(possible_combs)
