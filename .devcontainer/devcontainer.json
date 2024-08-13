@@ -14,8 +14,7 @@
 			},
 			"extensions": [
 				"ms-python.python",
-				"ms-python.vscode-pylance",
-				"eamodio.gitlens"
+				"ms-python.vscode-pylance"
 			]
 		}
 	},
